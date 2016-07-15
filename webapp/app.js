@@ -40,13 +40,20 @@ app.get('*', function (req, res) {
 
 function renderPage(appHtml) {
   return `
-    <!doctype html public="storage">
+    <!DOCTYPE html>
     <html>
-    <meta charset=utf-8/>
-    <title>My First React Router App</title>
-    <link rel=stylesheet href=/index.css>
-    <div id=app>${appHtml}</div>
-    <script src="/bundle.js"></script>
+    <head>
+      <meta charset="utf-8">
+      <title>Reggie</title>
+      <link rel="stylesheet" href="/index.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+      <div id="app"></div>
+      <script src="/bundle.js"></script>
+    </body>
+    </html>
    `
 }
 

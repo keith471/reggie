@@ -22,9 +22,13 @@
     "htmlparser2": "^3.9.1",
     "if-env": "^1.0.0",
     "jade": "^1.11.0",
+    "material-ui": "^0.15.2",
     "react": "^15.1.0",
+    "react-bootstrap": "^0.29.5",
     "react-dom": "^15.1.0",
     "react-router": "^2.5.2",
+    "react-router-bootstrap": "^0.23.0",
+    "react-tap-event-plugin": "^1.0.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
