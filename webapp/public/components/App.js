@@ -1,10 +1,49 @@
-// Needed for tapping in material ui
-import injectTapEventPlugin from 'react-tap-event-plugin'
-injectTapEventPlugin()
-
 import React from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import { AppBar } from 'material-ui'
+import { AppBar, MenuItem, FlatButton } from 'material-ui'
+import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
+
+const styles = {
+  button: {
+    color: '#fff',
+  },
+}
+
+export default React.createClass({
+    handleTitleTapped: function() {
+        browserHistory.push('/')
+    },
+
+    render() {
+        return (
+            <div>
+                <MuiThemeProvider>
+                    <AppBar
+                        title="Reggie"
+                        onTitleTouchTap={this.handleTitleTapped}
+                        iconElementRight={
+                            <div>
+                                <FlatButton
+                                    style={styles.button}
+                                    containerElement={<Link to="/login" />}
+                                    label="Log In"
+                                />
+                                <FlatButton
+                                    style={styles.button}
+                                    containerElement={<Link to="/signup" />}
+                                    label="Sign Up"
+                                />
+                            </div>
+                        }
+                    />
+                </MuiThemeProvider>
+
+                {this.props.children}
+            </div>
+        )
+    }
+})
 
 /*
 import { Nav, Navbar, NavItem } from 'react-bootstrap'
@@ -42,16 +81,3 @@ export default React.createClass({
     }
 })
 */
-
-export default React.createClass({
-    render() {
-        return (
-            <MuiThemeProvider>
-                <AppBar
-                    title="Reggie"
-                    iconClassNameRight="muidocs-icon-navigation-expand-more"
-                />
-            </MuiThemeProvider>
-        )
-    }
-})
